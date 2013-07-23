@@ -10,14 +10,19 @@ module.exports = function(grunt) {
     var pathConfig = {
         // プレゼンテーション
         app: 'reveal.js',
+        // 出力ファイル名
+        dist: 'index.html',
+        // テーマ
+        theme: 'default', // default, beige, moon, night, serif, simple, sky
+        // トランジション
+        transition: 'default', // default, cube, page, concave, zoom, linear, fade, none
+
         // ソースディレクトリ
         src: 'source',
         // テンプレートファイル
         template: 'template-revealjs.html',
         // 原稿ファイル
-        md: 'slides.md',
-        // 出力ファイル名
-        dist: 'index.html'
+        md: 'slides.md'
     };
 
     grunt.initConfig({
@@ -30,7 +35,7 @@ module.exports = function(grunt) {
         // ---------------------------------------------------
         exec: {
             pandoc: {
-                cmd: 'pandoc --section-divs -t html5 -s --template <%= path.src %>/<%= path.template %> -o <%= path.app %>/<%= path.dist %> <%= path.src %>/<%= path.md %>'
+                cmd: 'pandoc --section-divs -t html5 -s --template <%= path.src %>/<%= path.template %> --variable theme="<%= path.theme %>" --variable transition="<%= path.transition %>" -o <%= path.app %>/<%= path.dist %> <%= path.src %>/<%= path.md %>'
             }
         },
 
