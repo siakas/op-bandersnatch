@@ -1,15 +1,35 @@
-# Bandersnatch
+# 使い方
 
-## 変数設定
+Node.js と Pandoc のインストールが必要です。それぞれのインストールについては、公式サイトを参照してください。
 
-`Gruntfile.js` の `pathConfig` を適切に設定。デフォルトで問題ない。
+* [Node.js](http://nodejs.org/)
+* [Pandoc](http://johnmacfarlane.net/pandoc/)
 
-## Pandoc による変換の実行
+また、タスクの実行に Grunt を利用しているので、Grunt が入っていない場合はインストールしてください（バージョン４系）。
 
-パッケージをインストール。
+    npm install -g grunt-cli
 
-    npm install
+## プロジェクトを作成する
 
-Grunt による Pandoc 変換と HTML 圧縮を実行
+任意のディレクトリに bandersnatch を適当なディレクトリ名で clone します。
 
+    git clone https://github.com/sansyo/bandersnatch.git sample
+
+ファイル一式が取得できたら、Grunt タスクを実行する node_modules をインストールします。
+
+    cd sample && npm install
+
+これで準備完了です。
+
+## 原稿の作成
+
+`source` ディレクトリの slides.md が原稿ファイルになります。
+
+## Pandoc による変換
+
+Pandoc による変換は Grunt を通じて実行します。
+
+    cd sample
     grunt
+
+※sample ディレクトリにいる場合は、cd の実行は不要です。
