@@ -1,0 +1,179 @@
+/**
+ * Japanese theme for reveal.js.
+ *
+ * Copyright (C) 2013 Sanshiroh Sakai
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+$OpenSans: '"Open Sans", ';
+
+$sansSerifJa:   #{$OpenSans}"\30e1\30a4\30ea\30aa", Meiryo, "\30d2\30e9\30ae\30ce\89d2\30b4 Pro W3", "Hiragino Kaku Gothic Pro", "\ff2d\ff33 \ff30\30b4\30b7\30c3\30af", sans-serif;
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: $sansSerifJa;
+
+// $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+$headingFont: $sansSerifJa;
+$headingLineHeight: 1.2em;
+$headingTextTransform: none;
+
+// Background generator
+@mixin bodyBackground() {
+	@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+html {
+    font-size: 62.5%;
+}
+
+.reveal {
+
+    #top {
+        margin-top: 110px;
+        #slideTitle {
+            font-size: 9.6rem;
+            font-weight: bold;
+        }
+        #author {
+            font-size: 5.2rem;
+            text-align: center;
+            margin: 0;
+        }
+        #date {
+            text-align: center;
+        }
+    }
+
+    section {
+
+        section {
+            padding-top: 0 !important;
+        }
+
+        h1 {
+            font-size: 8.4rem;
+            line-height: 1.4;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+            margin-bottom: .7em;
+        }
+
+        h2 {
+            font-size: 5.2rem;
+            line-height: 1.4;
+            font-weight: bold;
+        }
+
+        h3 {
+            text-align: left;
+            font-size: 3.8rem;
+            line-height: 1.4;
+            font-weight: bold;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+        p {
+            margin-bottom: .7em;
+            line-height: 1.7;
+            text-align: left;
+            font-size: 3.2rem;
+        }
+
+        ul, ol {
+            margin-bottom: .7em;
+            line-height: 1.7;
+            text-align: left;
+            font-size: 3.2rem;
+        }
+
+        li > ul {
+            margin-left: 1.5em !important;
+            margin-bottom: 0;
+        }
+
+        pre {
+            font-size: 2rem;
+            line-height: 1.5;
+            margin-bottom: .7em;
+            border-radius: .3em;
+            width: 97% !important;
+            padding: 0 !important;
+            code {
+                padding: 0.9em 1.2em;
+                font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Consolas, Courier, monospace;
+                border-radius: .3em;
+            }
+        }
+
+        strong {
+            font-weight: bold;
+            color: lighten(#4284d3, 15%);
+            text-shadow: 2px 2px 1px rgba(0,0,0,.3);
+            font-size: 125%;
+            vertical-align: baseline;
+        }
+
+        em {
+            font-weight: bold;
+            text-shadow: 2px 2px 1px rgba(0,0,0,.3);
+        }
+
+    }
+
+}
+
+// .reveal {
+
+//     section {
+//         line-height: 1.7 !important;
+//         h2 {
+//             font-size: 1.5em;
+//             font-weight: bold;
+//         }
+//         p {
+//             margin-bottom: .7em;
+//         }
+//         ul {
+//             margin-bottom: .7em;
+//         }
+//         li > ul {
+//             margin-left: 2.5em !important;
+//         }
+//         .code {
+//             text-align: left;
+//             dt {
+//                 font-size: 75%;
+//                 line-height: 1.4;
+//             }
+//             dd {
+//                 margin: 0 0 1.5em 0;
+//                 pre {
+//                     width: 100%;
+//                 }
+//             }
+//         }
+//         pre {
+//             font-size: .5em;
+//             code {
+//                 padding: 15px 10px;
+//                 line-height: 1.7;
+//                 font-family: Menlo, monospace;
+//                 max-height: none;
+//             }
+//         }
+//     }
+
+// }

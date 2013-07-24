@@ -1,55 +1,77 @@
-% Markdown to Reveal.js
-% Sanshiroh Sakai
-% 2013/07/23
+% スライドタイトル
+% お名前
+% 2013/12/31
+
+# 大見出し
+
+大見出しごとにスライドが分割されます。
 
 # 大見出し
 
 ## 中見出し
 
-ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+中見出しのセクションは、縦方向にスライドが分割されます。
 
 ## 中見出し
 
-ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+こんな具合です。
 
-* this
-* is
-* cool
+## 中見出し
 
-# 変数設定
+### 小見出し
 
-The following variables can be defined from the command line:
+小見出しのブロックは分割されません。
 
-* theme
-* transition
+### 小見出し
 
-```bash
-pandoc -t html5 --template=template-revealjs.html \
-	--standalone --section-divs \
-  --variable theme="beige" \
-  --variable transition="linear" \
-  slides.md -o slides.html
-```
+分割されませんね。
 
 # 大見出し
 
-1. リスト
-2. リスト
-3. リスト
-4. リスト
+リンクは次のように表示されます。
 
-テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
-    npm install && grunt
+* [Yahoo! JAPAN](http://www.yahoo.co.jp/)
+* [Nike.com (JP)](http://www.nike.com/jp/ja_jp/)
 
 # 大見出し
 
-テキストテキストテキストテキストテキストテキストテキストテキスト
+## リストは中央寄せで表示されます
 
-* this
-    * is
-        * cool
-    * is
-        * hot
-* OK
-* Thank you
+* 天津飯
+* 雲呑麺
+* 青椒肉絲
+* 回鍋肉
+
+## 順序リストも同様です
+
+1. スパゲッティを茹でる
+2. 唐辛子とニンニクを弱火で炒める
+3. ２にスパゲッティと茹で汁少々を加え、手早く混ぜ合わせる
+4. 窓から捨てる
+
+# 大見出し
+
+ソースコードも表示できます。
+
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+# 大見出し
+
+文中の強調は二種類です。*強調*と**強い強調**です。強い強調はフォントサイズを少し大きくしています。
+
+# 大見出し
+
+ESC キーでスライド全体を俯瞰できます。
+
+# おしまい
+
+## ご清聴ありがとうございました

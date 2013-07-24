@@ -57,10 +57,10 @@ $endfor$
 <!-- Any section element inside of this container is displayed as a slide -->
 <div class="slides">
 
-<section>
-<h1>$title$</h1>
-$for(author)$<h3>$author$</h3>$endfor$
-<p>$date$</p>
+<section id="top">
+<h1 id="slideTitle">$title$</h1>
+$for(author)$<p id="author">$author$</p>$endfor$
+<p id="date">$date$</p>
 </section>
 
 $if(toc)$
