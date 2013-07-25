@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         // プレゼンテーション
         app: 'reveal.js',
         // 出力ファイル名
-        dist: 'index.html',
+        html: 'index.html',
         // テーマ
         theme: 'jp', // default, beige, moon, night, serif, simple, sky, jp
         // トランジション
@@ -19,10 +19,13 @@ module.exports = function(grunt) {
 
         // ソースディレクトリ
         src: 'source',
-        // テンプレートファイル
+        // 変換用テンプレートファイル
         template: 'template-revealjs.html',
         // 原稿ファイル
-        md: 'slides.md'
+        md: 'slides.md',
+
+        // 公開用
+        dist: 'presentation'
     };
 
     grunt.initConfig({
@@ -35,7 +38,7 @@ module.exports = function(grunt) {
         // ---------------------------------------------------
         exec: {
             pandoc: {
-                cmd: 'pandoc --section-divs -t html5 -s --template <%= path.src %>/<%= path.template %> --variable theme="<%= path.theme %>" --variable transition="<%= path.transition %>" -o <%= path.app %>/<%= path.dist %> <%= path.src %>/<%= path.md %>'
+                cmd: 'pandoc --section-divs -t html5 -s --template <%= path.src %>/<%= path.template %> --variable theme="<%= path.theme %>" --variable transition="<%= path.transition %>" -o <%= path.app %>/<%= path.html %> <%= path.src %>/<%= path.md %>'
             }
         },
 
@@ -50,8 +53,37 @@ module.exports = function(grunt) {
                     removeAttributeQuotes: false,
                 },
                 files: {
-                    '<%= path.app %>/<%= path.dist %>': '<%= path.app %>/<%= path.dist %>'
+                    '<%= path.app %>/<%= path.html %>': '<%= path.app %>/<%= path.html %>'
                 }
+            }
+        },
+
+        // 公開用ファイルの生成
+        // ---------------------------------------------------
+        copy: {
+            dist: {
+                files: [
+                    { expand: true, cwd: '<%= path.app %>/', src: ['**'], dest: '<%= path.dist %>/' }
+                ]
+            }
+        },
+        clean: {
+            dist: {
+                src: [
+                    '<%= path.dist %>/node_modules',
+                    '<%= path.dist %>/examples',
+                    '<%= path.dist %>/Gruntfile.js',
+                    '<%= path.dist %>/package.json',
+                    '<%= path.dist %>/README.md'
+                ]
+            }
+        },
+        compress: {
+            dist: {
+                options: {
+                    archive: '<%= path.dist %>.zip'
+                },
+                files: '<%= path.dist %>'
             }
         }
 
@@ -61,5 +93,14 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'exec:pandoc',
         'htmlmin:dist'
+    ]);
+
+    // 公開用ファイルの出力
+    grunt.registerTask('dist', [
+        'exec:pandoc',
+        'htmlmin:dist',
+        'copy:dist',
+        'clean:dist',
+        'compress:dist'
     ]);
 };
