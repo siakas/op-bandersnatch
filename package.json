@@ -1,6 +1,6 @@
 {
   "name": "bandersnatch",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Markdown file convert to Reveal.js by Pandoc",
   "main": "reveal.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://sansyo@github.com/sansyo/bandersnatch.git"
+    "url": "https://zimin9u@github.com/zimin9u/bandersnatch.git"
   },
   "author": "Sanshiroh Sakai",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/sansyo/bandersnatch/issues"
+    "url": "https://github.com/zimin9u/bandersnatch/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
