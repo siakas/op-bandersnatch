@@ -17,7 +17,7 @@ Node.js と Pandoc のインストールが必要です。それぞれのイン�
 
 任意のディレクトリに bandersnatch を適当なディレクトリ名で clone します。
 
-    git clone https://github.com/zimin9u/bandersnatch.git sample
+    git clone https://github.com/siakas/bandersnatch.git sample
 
 ファイル一式が取得できたら、Grunt タスクを実行する node_modules をインストールします。
 
