@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://zimin9u@github.com/zimin9u/bandersnatch.git"
+    "url": "https://siakas@github.com/siakas/bandersnatch.git"
   },
   "author": "Sanshiroh Sakai",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/zimin9u/bandersnatch/issues"
+    "url": "https://github.com/siakas/bandersnatch/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
