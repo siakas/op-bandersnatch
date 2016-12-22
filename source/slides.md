@@ -32,6 +32,7 @@
 
 * [Yahoo! JAPAN](http://www.yahoo.co.jp/)
 * [Nike.com (JP)](http://www.nike.com/jp/ja_jp/)
+* [Google](https://www.google.co.jp/)
 
 # 大見出し
 
